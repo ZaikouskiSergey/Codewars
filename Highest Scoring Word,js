@@ -1,0 +1,19 @@
+function high(x){
+    xArray= x.split(' ')
+
+    let pointArray = xArray.map((value)=>{
+        return value.split('').reduce((acc, el) =>
+        (el.charCodeAt(0) - 96 + acc), 0)
+    })
+    let maxIndex = pointArray.indexOf(Math.max.apply(null,pointArray))
+    return xArray[maxIndex].toString()
+}
+
+
+
+console.log(high('what time are we climbing up the volcano'))
+/*
+97
+120
+121
+122*/
